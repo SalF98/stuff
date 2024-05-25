@@ -20,7 +20,7 @@ while opcao != 6:
                 print(quantidade + 1, ')', manifestacoes[quantidade])
             print()
         else:
-            print("A lista está vazia.\n")
+            print("\nA lista está vazia.\n")
 
     if opcao == 2:
         nomeNovaManifestacao = input("Digite o nome da manifestação: ")
