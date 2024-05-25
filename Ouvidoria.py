@@ -38,7 +38,7 @@ while opcao != 6:
         else:
             print("Código informado inválido!")
 
-    elif opcao == 5:
+    if opcao == 5:
         posicao = int(input("Digite a posição da manifestação que deseja remover: "))
         if 1 <= posicao <= len(manifestacoes):
             manifestacoes.pop(posicao - 1)
