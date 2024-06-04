@@ -78,17 +78,18 @@ while opcao != 7:
 # 6) Excluir uma Manifestação pelo Código
 
     elif opcao == 6:
-        codigoApagar = input('Por favor insira o código da manifestação que você quer apagar: ')
+        codigoApagar = input('\nPor favor insira o código da manifestação que você quer apagar: ')
+
         consultaCodigo = "delete from manifestacoes where codigo = %s"
+
         codigoApagarLista = [codigoApagar]
-        excluirBancoDados(conexao, consultaCodigo, codigoApagarLista)
 
-        print('Manifestação apagada do sistema com sucesso!')
+        excluir = excluirBancoDados(conexao, consultaCodigo, codigoApagarLista)
 
-#Para implementar: quando o usuário coloca uma manifestação que não existe no sistema, a mensagem
-#"Manifestação apagada do sistema com sucesso!" é enviada, preciso colocar um sistema que envie uma
-#mensagem customizada caso o usuário não coloque nada/coloque um código inválido.
-
+        if excluir == 0:
+            print('\nManifestação não encontrada no sistema (Não existe/Já foi removida)')
+        else:
+            print('\nManifestação excluída com sucesso')
 
 encerrarBancoDados(conexao)
 print('👋 Tchau tchau! 👋')
